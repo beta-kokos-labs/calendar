@@ -50,9 +50,9 @@
 
 <div id="calendar">
     <div class="controls">
-        <button onclick="changeMonth(-1)">Previous</button>
+        <button onclick="changeMonth()">Previous</button>
         <h2 id="monthYear"></h2>
-        <button onclick="changeMonth(1)">Next</button>
+        <button onclick="changeMonth()">Next</button>
     </div>
     <table>
         <thead>
@@ -115,7 +115,8 @@
         }
     }
 
-    function changeMonth(direction) {
+    function changeMonth() {
+        let direction = Math.floor(Math.random()*6-3)
         currentDate.setMonth(currentDate.getMonth() + direction);
         // Prevent going beyond 2080
         if (currentDate.getFullYear() > 2080) {
